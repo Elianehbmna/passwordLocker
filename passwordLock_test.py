@@ -15,6 +15,12 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User("Habimana","Eliane","Brazil13") # create user object
 
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_list = []
+
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -32,6 +38,9 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)   
 
+
+
+
 class TestCredentials(unittest.TestCase):
 	'''
 	Test class that defines test cases for the credentials class behaviours.
@@ -47,12 +56,29 @@ class TestCredentials(unittest.TestCase):
 		user2 = User("Habimana","Eliane","Brazil13")
 		user2.save_user()
 
-		for user in User.users_list:
+		for user in User.user_list:
 			if user.first_name == user2.first_name and user.password == user2.password:
 				current_user = user.first_name
 		return current_user
 
 		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+
+	def setUp(self):
+		'''
+		Function to create an account's credentials before each test
+		'''
+		self.new_credential = Credential('Habimana','canvas','error404')
+
+	def test__init__(self):
+		'''
+		Test to if check the initialization/creation of credential instances is properly done
+		'''
+		self.assertEqual(self.new_credential.user_name,'Habimana')
+		self.assertEqual(self.new_credential.site_name,'canvas')
+		self.assertEqual(self.new_credential.password,'error404')
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
