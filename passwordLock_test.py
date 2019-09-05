@@ -41,6 +41,7 @@ class TestUser(unittest.TestCase):
 
 
 
+
 class TestCredentials(unittest.TestCase):
 	'''
 	Test class that defines test cases for the credentials class behaviours.
@@ -77,8 +78,14 @@ class TestCredentials(unittest.TestCase):
 		self.assertEqual(self.new_credential.site_name,'canvas')
 		self.assertEqual(self.new_credential.password,'error404')
 
-
-
+	def test_save_credentials(self):
+		'''
+		Test to check if the new credential info is saved into the credentials list
+		'''
+		self.new_credential.save_credentials()
+		twitter = Credential('Eliane','github','error404')
+		twitter.save_credentials()
+		self.assertEqual(len(Credential.credentials_list),2)
 
 if __name__ == '__main__':
     unittest.main()
