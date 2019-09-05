@@ -14,11 +14,11 @@ class User:
 		self.last_name = last_name
 		self.password = password
 
-	def save_user(self):
-		'''
-		Function to save a new object
-		'''
-		User.users_list.append(self)
+	# def save_user(self):
+	# 	'''
+	# 	Function to save a new object
+	# 	'''
+	# 	User.users_list.append(self)
 
 
 class Credential:
