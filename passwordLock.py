@@ -1,3 +1,5 @@
+import random
+import string
 class User:
 	'''
 	Class to create user accounts 
@@ -54,4 +56,25 @@ class Credential:
 		Function to save a newly created user instance
 		'''
 		# global users_list
-		Credential.credentials_list.append(self)	
+		Credential.credentials_list.append(self)
+
+
+	
+	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+		'''
+		Function to generate an 8 character password for a credential
+		'''
+		gen_pass=''.join(random.choice(char) for _ in range(size))
+		return gen_pass
+
+	@classmethod
+	def display_credentials(cls,user_name):
+		'''
+		Class method to display the list of credentials saved
+		'''
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.user_name == user_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
+					

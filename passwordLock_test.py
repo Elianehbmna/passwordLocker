@@ -69,6 +69,9 @@ class TestCredentials(unittest.TestCase):
 		Function to create an account's credentials before each test
 		'''
 		self.new_credential = Credential('Habimana','canvas','error404')
+    
+    
+	
 
 	def test__init__(self):
 		'''
@@ -83,9 +86,29 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the new credential info is saved into the credentials list
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Eliane','github','error404')
-		twitter.save_credentials()
+		github = Credential('Eliane','github','error402')
+		github.save_credentials()
 		self.assertEqual(len(Credential.credentials_list),2)
+
+    
+	def tearDown(self):
+		'''
+		Function to clear the credentials list after every test
+		'''
+		Credential.credentials_list = []
+		User.user_list = []
+
+	
+	def test_display_credentials(self):
+		'''
+		Test to check if the display_credentials method, displays the correct credentials.
+		'''
+		self.new_credential.save_credentials()
+		github = Credential('Eliane','github','error402')
+		github.save_credentials()
+		aliexpress = Credential('Habels','aliexpress','error402')
+		aliexpress.save_credentials()
+		self.assertEqual(len(Credential.display_credentials(github.user_name)),2)
 
 if __name__ == '__main__':
     unittest.main()
