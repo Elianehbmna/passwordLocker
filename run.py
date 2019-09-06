@@ -43,17 +43,17 @@ def save_credential(credential):
 	'''
 	Credential.save_credentials(credential)
 
-# def delete_credential(credential):
-# 	'''
-# 	function to delete created credentials
-# 	'''
-# 	Credential.delete_credentials(credential)
+def delete_credential(credential):
+	'''
+	function to delete created credentials
+	'''
+	Credential.delete_credentials(credential)
 
-# def display_credentials(user_name):
-# 	'''
-# 	Function to display credentials saved by a user
-# 	'''
-# 	return Credential.display_credentials(user_name)
+def display_credentials(user_name):
+	'''
+	Function to display credentials saved by a user
+	'''
+	return Credential.display_credentials(user_name)
 	
 
 
