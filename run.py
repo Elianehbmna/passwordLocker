@@ -57,16 +57,16 @@ def display_credentials(user_name):
 	
 
 
-# def main():
-# 	print(' ')
-# 	print('Hello! Welcome to Password Locker.')
-# 	while True:
-# 		print(' ')
-# 		print("-"*60)
-# 		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
-# 		short_code = input('Enter a choice: ').lower().strip()
-# 		if short_code == 'ex':
-# 			break
+def main():
+	print(' ')
+	print('Hello! Welcome to Password Locker.')
+	while True:
+		print(' ')
+		print("-"*60)
+		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+		short_code = input('Enter a choice: ').lower().strip()
+		if short_code == 'ex':
+			break
 
 # 		elif short_code == 'ca':
 # 			print("-"*60)
@@ -159,6 +159,6 @@ def display_credentials(user_name):
 
 
 
-# if __name__ == '__main__':
-# 	main()
+if __name__ == '__main__':
+	main()
 
