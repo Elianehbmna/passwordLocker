@@ -22,6 +22,7 @@ class User:
 		'''
 		User.user_list.append(self)
 
+#credential class
 
 class Credential:
 	'''
@@ -58,7 +59,7 @@ class Credential:
 		# global users_list
 		Credential.credentials_list.append(self)
     
-	def delete_credential(self):
+	def delete_credentials(self):
 		'''
 		delete_contact method deletes a saved contact from the contact_list
 		'''
