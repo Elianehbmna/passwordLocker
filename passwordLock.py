@@ -57,8 +57,13 @@ class Credential:
 		'''
 		# global users_list
 		Credential.credentials_list.append(self)
-
-
+    
+	def delete_credential(self):
+		'''
+		delete_contact method deletes a saved contact from the contact_list
+		'''
+		Credential.credentials_list.remove(self)
+         
 	
 	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
 		'''
